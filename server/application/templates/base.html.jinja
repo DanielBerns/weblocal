@@ -10,12 +10,26 @@
 </head>
 <body>
 <div class="w3-container w3-pale-blue">
-<h1 class="w3-center">Hi, {{ user.username }}!</h1>
-{% for post in posts %}
-<div class="w3-card w3-pale-green">
-  <p>{{ post.author.username }} says: <b>{{ post.body }}</b></p>
+<h1 class="w3-center">{{ header }}</h1>
+<hr>
+<div>
+    LocalWeb:
+    <a href="/">Home</a>
+    <a href="/login">Login</a>
 </div>
-{% endfor %}
+<hr>
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+<ul>
+    {% for message in messages %}
+    <li>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+<hr>
+{% endwith %}
+{% block content %}
+{% endblock %}
 </div>
 </body>
 </html> 

@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+<head>
+<title>{{ title }} - LocalWeb</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/static/css/w3.css">
+<link rel="stylesheet" href="/static/css/w3-theme-teal.css">
+<link rel="stylesheet" href="/static/css/font-awesome.min.css">  
+<script src="/static/js/w3.js"></script>
+</head>
+<body>
+<div class="w3-container w3-pale-blue">
+<h1 class="w3-center">Hi, {{ user.username }}!</h1>
+{% for post in posts %}
+<div class="w3-card w3-pale-green">
+  <p>{{ post.author.username }} says: <b>{{ post.body }}</b></p>
+</div>
+{% endfor %}
+</div>
+</body>
+</html> 
